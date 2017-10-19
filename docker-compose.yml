@@ -1,0 +1,24 @@
+version: "3.3"
+
+services:
+    mariadb:
+        image: mariadb
+        container_name: mariadb2
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: phpmyadmin2
+        links:
+            - mariadb:db
+        ports:
+            - "15000:80"
+
+    wordpress:
+        image: wordpress
+        container_name: wordpress2
+        links:
+            - mariadb:mysql
+        ports:
+            - "15001:80"
