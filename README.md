@@ -9,9 +9,10 @@ Go to : http://192.168.99.100:1992 or http://localhost/1992
 
 <h1>Log</h1>
 
-<h3>Wordpress</h3>
-User : admin
-Psw : JAJOt*A!9T5ASFtTzm
+<h3>Wordpress :</h3>
+
+  User : admin
+  Psw : JAJOt*A!9T5ASFtTzm
 
 
 
