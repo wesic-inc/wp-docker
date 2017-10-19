@@ -22,3 +22,7 @@ services:
             - mariadb:mysql
         ports:
             - "1992:80"
+        environment:
+            - WORDPRESS_DB_USER=root
+            - WORDPRESS_DB_PASSWORD=root
+            
