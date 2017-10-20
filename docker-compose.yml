@@ -2,15 +2,16 @@ version: "3.3"
 
 services:
     mariadb:
-        image: mariadb
+        image: mariadb:10.2
         container_name: mariadb
         environment:
             - MYSQL_ROOT_PASSWORD=root
+        #mariadb auto import all ".sql" in /docker-entrypoint-initdb.d/
         volumes:
             - ./wp_database.sql:/docker-entrypoint-initdb.d/wp_database.sql
 
     phpmyadmin:
-        image: phpmyadmin/phpmyadmin
+        image: phpmyadmin/phpmyadmin:4.7.4-1
         container_name: phpmyadmin
         links:
             - mariadb:db
@@ -18,7 +19,7 @@ services:
             - "1995:80"
 
     wordpress:
-        image: wordpress
+        image: wordpress:4.8.2
         container_name: wordpress
         links:
             - mariadb:mysql
