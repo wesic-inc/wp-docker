@@ -7,8 +7,8 @@ services:
         environment:
             - MYSQL_ROOT_PASSWORD=root
         #mariadb auto import all ".sql" in /docker-entrypoint-initdb.d/
-        #volumes:
-        #    - ./wp_database.sql:/docker-entrypoint-initdb.d/wp_database.sql
+        volumes:
+            - ./wp_database.sql:/docker-entrypoint-initdb.d/wp_database.sql
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin:4.7.4-1
@@ -28,5 +28,5 @@ services:
         environment:
             - WORDPRESS_DB_USER=root
             - WORDPRESS_DB_PASSWORD=root
-        #volumes:
-            #- ./wp-content:/var/www/html/wp-content
+        volumes:
+            - ./wp-content:/var/www/html/wp-content
